@@ -21,20 +21,23 @@ This project is a responsive, interactive data table built using **React** and *
 
 ## 📂 Folder Structure
 
+```
 src/
-├── App.tsx # Main table logic
-├── GroupHeader.tsx # Table group headers
-├── ToolBar.tsx # Top action bar for column management
-├── TopBar.tsx # Global search input
-├── constants/
-│ └── data.ts # Default dummy data and types
+├── App.tsx          # Main table logic
 ├── App.css
+├── GroupHeader.tsx  # Table group headers
+├── ToolBar.tsx      # Top action bar for column management
+├── TopBar.tsx       # Global search input
+└── constants/
+    └── data.ts      # Default dummy data and types
+```
 
 
 ## 📄 How to Run
 
+```bash
 npm install
 npm run dev
-
+```
 Make sure you have Node.js installed.
 
