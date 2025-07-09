@@ -26,6 +26,25 @@ import {
 } from "lucide-react";
 import ToolBar from "./ToolBar.tsx";
 import TopBar from "./TopBar.tsx";
+
+// columnContext 
+import { createContext, useContext } from "react";
+
+type ColumnContextType = {
+  columnName: string;
+  setColumnName: React.Dispatch<React.SetStateAction<string>>;
+  addColumnfunc: () => void;
+};
+
+export const ColumnContext = createContext<ColumnContextType | null>(null);
+export const useColumnContext = () => {
+  const context = useContext(ColumnContext);
+  if (!context)
+    throw new Error("useColumnContext must be used within provider");
+  return context;
+};
+
+
 const columnHelper = createColumnHelper<dummy>();
 const emptyAlwaysBottomSort = <T,>(
   rowA: Row<T>,
@@ -469,7 +488,7 @@ function App() {
     setGlobalFilter(e.target.value);
   };
 
-  const [columnName] = useState("New Column");
+  const [columnName,setColumnName] = useState("");
   const [num, setNum] = useState(0);
 
   const addColumnfunc = () => {
@@ -534,10 +553,15 @@ function App() {
               changeGlobalFilter(e)
             }
           />
-          <ToolBar
-            sortHandlerFunc={sortColumnfunc}
-            columnHandlerFunc={addColumnfunc}
-          />
+          <ColumnContext.Provider
+            value={{ columnName, setColumnName, addColumnfunc }}
+          >
+            <ToolBar
+              sortHandlerFunc={sortColumnfunc}
+              // columnHandlerFunc={addColumnfunc}
+            />
+          </ColumnContext.Provider>
+
           <div className="relative">
             <GroupHeader />
             <table className="w-full table-fixed divide-y divide-gray-200 border-separate border-spacing-x-0.25">

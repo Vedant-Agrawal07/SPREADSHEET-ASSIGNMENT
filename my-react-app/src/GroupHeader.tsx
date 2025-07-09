@@ -3,7 +3,7 @@ import { Ellipsis, Link2, RefreshCw, Split } from "lucide-react";
 const GroupHeader = () => {
   return (
     <div className="sticky top-0 z-10 bg-white text-black text-sm">
-      <div className="flex border-t border-t-amber-300">
+      <div className="flex">
         <div className="w-[35.5px] bg-white"></div>
 
         <div className="w-[686.5px] text-center py-2 border-t-gray-300 bg-[#e2e2e2] font-normal text-[13px]">

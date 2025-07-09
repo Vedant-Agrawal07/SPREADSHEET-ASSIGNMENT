@@ -9,14 +9,16 @@ import {
   Split,
   Upload,
 } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import AddColumnModal from "./AddColumnModal";
 
 type ToolBarPropTypes = {
-  columnHandlerFunc: () => void;
+  // columnHandlerFunc: () => void;
   sortHandlerFunc: (e: React.SyntheticEvent) => void;
 };
 
-const ToolBar = ({ columnHandlerFunc, sortHandlerFunc }: ToolBarPropTypes) => {
+const ToolBar = ({  sortHandlerFunc }: ToolBarPropTypes) => {
+   let [isOpen, setIsOpen] = useState(false);
   return (
     <div className="w-[1520px] h-[48px] bg-white flex flex-row justify-items-center items-center justify-between border-t-1 border-gray-300">
       <div className="flex flex-row justify-items-center items-center justify-evenly">
@@ -121,12 +123,17 @@ const ToolBar = ({ columnHandlerFunc, sortHandlerFunc }: ToolBarPropTypes) => {
           className="mr-[10px]"
         >
           <button
-            onClick={columnHandlerFunc}
+            // onClick={() => setIsOpen(true)}
+            onClick={() => {
+              // columnHandlerFunc;
+              setIsOpen(true);
+            }}
             className="flex flex-row justify-items-center items-center rounded-md bg-[#4b6a4f] hover:bg-[#3e5841] px-[24px] py-[8px] cursor-pointer"
           >
             <Split className="mr-[7px]" size={20} color="white" />
             <span className="text-white">New Action</span>
           </button>
+          <AddColumnModal isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
     </div>
