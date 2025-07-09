@@ -29,6 +29,7 @@ import TopBar from "./TopBar.tsx";
 
 // columnContext 
 import { createContext, useContext } from "react";
+import OrdersTabs from "./OrdersTabs.tsx";
 
 type ColumnContextType = {
   columnName: string;
@@ -658,6 +659,7 @@ function App() {
                 ))}
               </tbody>
             </table>
+                <OrdersTabs/>
           </div>
         </div>
       </div>
