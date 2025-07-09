@@ -25,7 +25,7 @@ import {
   X,
 } from "lucide-react";
 import ToolBar from "./ToolBar.tsx";
-import TopBar from "./TopBar.tsx";
+import TopBar from "./TopBar";
 const columnHelper = createColumnHelper<dummy>();
 const emptyAlwaysBottomSort = <T,>(
   rowA: Row<T>,
