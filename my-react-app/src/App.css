@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+
+.isResizing{
+  background-color: rgb(109, 248, 34);
+  opacity: 1;
+}
