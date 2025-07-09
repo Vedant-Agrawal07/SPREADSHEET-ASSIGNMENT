@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import GroupHeader from "./GroupHeader";
+import GroupHeader from "./GroupHeader.tsx";
 import { defaultData, type dummy } from "./constants/data";
 import {
   createColumnHelper,
@@ -24,8 +24,8 @@ import {
   User,
   X,
 } from "lucide-react";
-import ToolBar from "./ToolBar";
-import TopBar from "./TopBar";
+import ToolBar from "./ToolBar.tsx";
+import TopBar from "./TopBar.tsx";
 const columnHelper = createColumnHelper<dummy>();
 const emptyAlwaysBottomSort = <T,>(
   rowA: Row<T>,
