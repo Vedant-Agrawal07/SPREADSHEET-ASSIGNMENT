@@ -32,7 +32,7 @@ export const defaultData: dummy[] = [
   },
   {
     id: 2,
-    jobRequest: " social media campaign for product XYZ",
+    jobRequest: "Update press kit for company redesign",
     submitted: "15-01-2024",
     status: "Need to start",
     submitter: "irfan khan",
@@ -44,7 +44,7 @@ export const defaultData: dummy[] = [
   },
   {
     id: 3,
-    jobRequest: "media campaign for product XYZ",
+    jobRequest: "Finalize user testing feedback for app update",
     submitted: "25-12-2024",
     status: "Complete",
     submitter: "emily red",
@@ -56,7 +56,7 @@ export const defaultData: dummy[] = [
   },
   {
     id: 4,
-    jobRequest: "design for for product XYZ",
+    jobRequest: "Prepare financial report for Q4",
     submitted: "18-11-2024",
     status: "Blocked",
     submitter: "Aisha Patel",
@@ -138,5 +138,4 @@ export const defaultData: dummy[] = [
     dueDate: "",
     estValue: "",
   },
-
 ];
